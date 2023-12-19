@@ -5,15 +5,27 @@
 
 import java.lang.Math;
 
-
 public class GenThree {
 	public static void main(String[] args) {
-			int min = Integer.parseInt(args[0]);
-			int max = Integer.parseInt(args[1]);
+			int min, max;
+			
+			int num1 = Integer.parseInt(args[0]);
+			int num2 = Integer.parseInt(args[1]);
+
+			if (num1 <= num2) {
+					min = num1;
+					max = num2;
+			}
+			else {
+					min = num2;
+					max = num1;
+			}
+			
 
 			/* Math.random() generate random double number in the range [0,1), then we'll multiply it by the 
-			 * differance (max - min) in order to get a number in the range [0, max-min) . and then we will cast it to type int to 
-			 * remove the decimal part. and lastly we'll add it to min to get a random number in the range [min, max) 
+			 * differance (max - min) in order to get a number in the range [0, max-min).
+			 * And then we will cast it to type int to remove the decimal part. 
+			 * And lastly we'll add it to min to get a random number in the range [min, max).
 			 */
 			int randNum1 = min + (int)(Math.random() * (max - min));
 			int randNum2 = min + (int)(Math.random() * (max - min));
